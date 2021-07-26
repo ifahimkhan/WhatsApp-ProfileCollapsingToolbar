@@ -1,10 +1,14 @@
 package com.anton46.whatsapp_profile;
 
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.appbar.AppBarLayout;
+
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -32,12 +36,15 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         initUi();
     }
 
     private void initUi() {
+        appBarLayout=findViewById(R.id.appbar);
+        toolbarHeaderView=findViewById(R.id.toolbar_header_view);
+        floatHeaderView=findViewById(R.id.float_header_view);
         appBarLayout.addOnOffsetChangedListener(this);
 
         toolbarHeaderView.bindTo("Larry Page", "Last seen today at 7.00PM");

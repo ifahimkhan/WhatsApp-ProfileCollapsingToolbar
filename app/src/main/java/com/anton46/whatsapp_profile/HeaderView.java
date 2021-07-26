@@ -47,6 +47,8 @@ public class HeaderView extends LinearLayout {
     }
 
     public void bindTo(String name, String lastSeen) {
+        this.name=findViewById(R.id.name);
+        this.lastSeen=findViewById(R.id.last_seen);
         this.name.setText(name);
         this.lastSeen.setText(lastSeen);
     }
